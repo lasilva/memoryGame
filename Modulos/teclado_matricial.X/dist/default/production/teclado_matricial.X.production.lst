@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.36 build -262312587 
-                                                                                               Mon Apr 18 21:36:36 2016
+                                                                                               Tue Apr 26 14:19:43 2016
 
 Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150325
      1                           	processor	16F877A
@@ -141,17 +141,17 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    135                           
    136                           	psect	cstackCOMMON
    137  0070                     __pcstackCOMMON:	
-   138  0070                     ?_keyPressed:	
-   139  0070                     ?_interrupcao:	
+   138  0070                     ?_pulse:	
+   139  0070                     ?_keyPressed:	
    140                           ; 1 bytes @ 0x0
    141                           
-   142  0070                     ??_interrupcao:	
+   142  0070                     ?_interrupcao:	
    143                           ; 1 bytes @ 0x0
    144                           
-   145  0070                     ?_main:	
+   145  0070                     ??_interrupcao:	
    146                           ; 1 bytes @ 0x0
    147                           
-   148  0070                     ?_pulse:	
+   148  0070                     ?_main:	
    149                           ; 1 bytes @ 0x0
    150                           
    151                           
@@ -183,7 +183,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    177 ;;
    178 ;; *************** function _main *****************
    179 ;; Defined at:
-   180 ;;		line 40 in file "teclado.c"
+   180 ;;		line 21 in file "teclado.c"
    181 ;; Parameters:    Size  Location     Type
    182 ;;		None
    183 ;; Auto vars:     Size  Location     Type
@@ -214,7 +214,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    208                           ;psect for function _main
    209  00C4                     _main:	
    210                           
-   211                           ;teclado.c: 43: OPTION_REG = 0b10000000;
+   211                           ;teclado.c: 23: OPTION_REG = 0b10000000;
    212                           
    213                           ;incstack = 0
    214                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
@@ -223,79 +223,79 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    217  00C6  1303               	bcf	3,6	;RP1=0, select bank1
    218  00C7  0081               	movwf	1	;volatile
    219                           
-   220                           ;teclado.c: 44: T0CS = 0;
+   220                           ;teclado.c: 24: T0CS = 0;
    221  00C8  1281               	bcf	1,5	;volatile
    222                           
-   223                           ;teclado.c: 45: T0SE = 0;
+   223                           ;teclado.c: 25: T0SE = 0;
    224  00C9  1201               	bcf	1,4	;volatile
    225                           
-   226                           ;teclado.c: 46: PSA = 0;
+   226                           ;teclado.c: 26: PSA = 0;
    227  00CA  1181               	bcf	1,3	;volatile
    228                           
-   229                           ;teclado.c: 47: PS2 = 1;
+   229                           ;teclado.c: 27: PS2 = 1;
    230  00CB  1501               	bsf	1,2	;volatile
    231                           
-   232                           ;teclado.c: 48: PS1 = 1;
+   232                           ;teclado.c: 28: PS1 = 1;
    233  00CC  1481               	bsf	1,1	;volatile
    234                           
-   235                           ;teclado.c: 49: PS0 = 1;
+   235                           ;teclado.c: 29: PS0 = 1;
    236  00CD  1401               	bsf	1,0	;volatile
    237                           
-   238                           ;teclado.c: 52: GIE=1;
+   238                           ;teclado.c: 32: GIE=1;
    239  00CE  178B               	bsf	11,7	;volatile
    240                           
-   241                           ;teclado.c: 53: PEIE=1;
+   241                           ;teclado.c: 33: PEIE=1;
    242  00CF  170B               	bsf	11,6	;volatile
    243                           
-   244                           ;teclado.c: 54: TMR0IE=1;
+   244                           ;teclado.c: 34: TMR0IE=1;
    245  00D0  168B               	bsf	11,5	;volatile
    246                           
-   247                           ;teclado.c: 55: TMR0 = 0x89;
+   247                           ;teclado.c: 35: TMR0 = 0x89;
    248  00D1  3089               	movlw	137
    249  00D2  1283               	bcf	3,5	;RP0=0, select bank0
    250  00D3  1303               	bcf	3,6	;RP1=0, select bank0
    251  00D4  0081               	movwf	1	;volatile
    252                           
-   253                           ;teclado.c: 57: TRISC = 0;
+   253                           ;teclado.c: 37: TRISC = 0;
    254  00D5  1683               	bsf	3,5	;RP0=1, select bank1
    255  00D6  1303               	bcf	3,6	;RP1=0, select bank1
    256  00D7  0187               	clrf	7	;volatile
    257                           
-   258                           ;teclado.c: 58: PORTC = 0;
+   258                           ;teclado.c: 38: PORTC = 0;
    259  00D8  1283               	bcf	3,5	;RP0=0, select bank0
    260  00D9  1303               	bcf	3,6	;RP1=0, select bank0
    261  00DA  0187               	clrf	7	;volatile
    262                           
-   263                           ;teclado.c: 59: TRISB = 0b11110000;
+   263                           ;teclado.c: 39: TRISB = 0b11110000;
    264  00DB  30F0               	movlw	240
    265  00DC  1683               	bsf	3,5	;RP0=1, select bank1
    266  00DD  1303               	bcf	3,6	;RP1=0, select bank1
    267  00DE  0086               	movwf	6	;volatile
    268                           
-   269                           ;teclado.c: 60: PORTB=1;
+   269                           ;teclado.c: 40: PORTB=1;
    270  00DF  3001               	movlw	1
    271  00E0  1283               	bcf	3,5	;RP0=0, select bank0
    272  00E1  1303               	bcf	3,6	;RP1=0, select bank0
    273  00E2  0086               	movwf	6	;volatile
-   274  00E3                     l695:	
-   275                           ;teclado.c: 61: while(1)
+   274  00E3                     l693:	
+   275                           ;teclado.c: 41: while(1)
    276                           
    277                           
-   278                           ;teclado.c: 62: {
-   279                           ;teclado.c: 63: if(flag){
+   278                           ;teclado.c: 42: {
+   279                           ;teclado.c: 43: if(flag){
    280  00E3  1C7A               	btfss	_flag/(0+8),_flag& (0+7)
-   281  00E4  28E3               	goto	l695
+   281  00E4  28E3               	goto	l693
    282                           
-   283                           ;teclado.c: 64: keyPressed();
+   283                           ;teclado.c: 44: keyPressed();
    284  00E5  120A  118A  201E  120A  118A  	fcall	_keyPressed
-   285  00EA  28E3               	goto	l695
+   285  00EA  28E3               	goto	l693
    286  00EB                     __end_of_main:	
    287                           
    288                           	psect	text1
    289  001E                     __ptext1:	
    290 ;; *************** function _keyPressed *****************
    291 ;; Defined at:
-   292 ;;		line 83 in file "teclado.c"
+   292 ;;		line 30 in file "teclado_functions.h"
    293 ;; Parameters:    Size  Location     Type
    294 ;;		None
    295 ;; Auto vars:     Size  Location     Type
@@ -327,227 +327,227 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    321                           ;psect for function _keyPressed
    322  001E                     _keyPressed:	
    323                           
-   324                           ;teclado.c: 85: if(RB0 && controle==0x01){
+   324                           ;teclado_functions.h: 31: if(RB0 && controle==0x01){
    325                           
    326                           ;incstack = 0
    327                           ; Regs used in _keyPressed: [wreg+status,2+status,0+pclath+cstack]
    328  001E  1283               	bcf	3,5	;RP0=0, select bank0
    329  001F  1303               	bcf	3,6	;RP1=0, select bank0
    330  0020  1C06               	btfss	6,0	;volatile
-   331  0021  283D               	goto	l78
+   331  0021  283D               	goto	l65
    332  0022  037B               	decf	_controle,w
    333  0023  1D03               	btfss	3,2
-   334  0024  283D               	goto	l78
+   334  0024  283D               	goto	l65
    335                           
-   336                           ;teclado.c: 86: controle=0x02;
+   336                           ;teclado_functions.h: 32: controle=0x02;
    337  0025  3002               	movlw	2
    338  0026  00F9               	movwf	??_keyPressed
    339  0027  0879               	movf	??_keyPressed,w
    340  0028  00FB               	movwf	_controle
    341                           
-   342                           ;teclado.c: 87: RB0=0x00;
+   342                           ;teclado_functions.h: 33: RB0=0x00;
    343  0029  1006               	bcf	6,0	;volatile
    344                           
-   345                           ;teclado.c: 88: RB1=0x01;
+   345                           ;teclado_functions.h: 34: RB1=0x01;
    346  002A  1486               	bsf	6,1	;volatile
    347                           
-   348                           ;teclado.c: 89: RB2=0x01;
+   348                           ;teclado_functions.h: 35: RB2=0x01;
    349  002B  1506               	bsf	6,2	;volatile
    350                           
-   351                           ;teclado.c: 90: RB3=0x01;
+   351                           ;teclado_functions.h: 36: RB3=0x01;
    352  002C  1586               	bsf	6,3	;volatile
    353                           
-   354                           ;teclado.c: 91: if(!RB4)pulse(1);
+   354                           ;teclado_functions.h: 37: if(!RB4)pulse(1);
    355  002D  1A06               	btfsc	6,4	;volatile
-   356  002E  2831               	goto	l79
+   356  002E  2831               	goto	l66
    357  002F  3001               	movlw	1
    358  0030  2894               	goto	L1
-   359  0031                     l79:	
+   359  0031                     l66:	
    360                           
-   361                           ;teclado.c: 92: else if(!RB5)pulse(4);
+   361                           ;teclado_functions.h: 38: else if(!RB5)pulse(4);
    362  0031  1A86               	btfsc	6,5	;volatile
-   363  0032  2835               	goto	l81
+   363  0032  2835               	goto	l68
    364  0033  3004               	movlw	4
    365  0034  2894               	goto	L1
-   366  0035                     l81:	
+   366  0035                     l68:	
    367                           
-   368                           ;teclado.c: 93: else if(!RB6)pulse(7);
+   368                           ;teclado_functions.h: 39: else if(!RB6)pulse(7);
    369  0035  1B06               	btfsc	6,6	;volatile
-   370  0036  2839               	goto	l83
+   370  0036  2839               	goto	l70
    371  0037  3007               	movlw	7
    372  0038  2894               	goto	L1
-   373  0039                     l83:	
+   373  0039                     l70:	
    374                           
-   375                           ;teclado.c: 94: else if(!RB7)pulse(10);
+   375                           ;teclado_functions.h: 40: else if(!RB7)pulse(10);
    376  0039  1B86               	btfsc	6,7	;volatile
-   377  003A  2897               	goto	l663
+   377  003A  2897               	goto	l661
    378  003B  300A               	movlw	10
    379  003C  2894               	goto	L1
-   380  003D                     l78:	
-   381                           ;teclado.c: 95: }else if(RB1 && controle==0x02){
+   380  003D                     l65:	
+   381                           ;teclado_functions.h: 41: }else if(RB1 && controle==0x02){
    382                           
    383  003D  1C86               	btfss	6,1	;volatile
-   384  003E  285B               	goto	l87
+   384  003E  285B               	goto	l74
    385  003F  3002               	movlw	2
    386  0040  067B               	xorwf	_controle,w
    387  0041  1D03               	btfss	3,2
-   388  0042  285B               	goto	l87
+   388  0042  285B               	goto	l74
    389                           
-   390                           ;teclado.c: 96: controle=0x03;
+   390                           ;teclado_functions.h: 42: controle=0x03;
    391  0043  3003               	movlw	3
    392  0044  00F9               	movwf	??_keyPressed
    393  0045  0879               	movf	??_keyPressed,w
    394  0046  00FB               	movwf	_controle
    395                           
-   396                           ;teclado.c: 97: RB0=0x01;
+   396                           ;teclado_functions.h: 43: RB0=0x01;
    397  0047  1406               	bsf	6,0	;volatile
    398                           
-   399                           ;teclado.c: 98: RB1=0x00;
+   399                           ;teclado_functions.h: 44: RB1=0x00;
    400  0048  1086               	bcf	6,1	;volatile
    401                           
-   402                           ;teclado.c: 99: RB2=0x01;
+   402                           ;teclado_functions.h: 45: RB2=0x01;
    403  0049  1506               	bsf	6,2	;volatile
    404                           
-   405                           ;teclado.c: 100: RB3=0x01;
+   405                           ;teclado_functions.h: 46: RB3=0x01;
    406  004A  1586               	bsf	6,3	;volatile
    407                           
-   408                           ;teclado.c: 101: if(!RB4)pulse(2);
+   408                           ;teclado_functions.h: 47: if(!RB4)pulse(2);
    409  004B  1A06               	btfsc	6,4	;volatile
-   410  004C  284F               	goto	l88
+   410  004C  284F               	goto	l75
    411  004D  3002               	movlw	2
    412  004E  2894               	goto	L1
-   413  004F                     l88:	
+   413  004F                     l75:	
    414                           
-   415                           ;teclado.c: 102: else if(!RB5)pulse(5);
+   415                           ;teclado_functions.h: 48: else if(!RB5)pulse(5);
    416  004F  1A86               	btfsc	6,5	;volatile
-   417  0050  2853               	goto	l90
+   417  0050  2853               	goto	l77
    418  0051  3005               	movlw	5
    419  0052  2894               	goto	L1
-   420  0053                     l90:	
+   420  0053                     l77:	
    421                           
-   422                           ;teclado.c: 103: else if(!RB6)pulse(8);
+   422                           ;teclado_functions.h: 49: else if(!RB6)pulse(8);
    423  0053  1B06               	btfsc	6,6	;volatile
-   424  0054  2857               	goto	l92
+   424  0054  2857               	goto	l79
    425  0055  3008               	movlw	8
    426  0056  2894               	goto	L1
-   427  0057                     l92:	
+   427  0057                     l79:	
    428                           
-   429                           ;teclado.c: 104: else if(!RB7)pulse(11);
+   429                           ;teclado_functions.h: 50: else if(!RB7)pulse(11);
    430  0057  1B86               	btfsc	6,7	;volatile
-   431  0058  2897               	goto	l663
+   431  0058  2897               	goto	l661
    432  0059  300B               	movlw	11
    433  005A  2894               	goto	L1
-   434  005B                     l87:	
-   435                           ;teclado.c: 105: }else if(RB2 && controle==0x03){
+   434  005B                     l74:	
+   435                           ;teclado_functions.h: 51: }else if(RB2 && controle==0x03){
    436                           
    437  005B  1D06               	btfss	6,2	;volatile
-   438  005C  2879               	goto	l96
+   438  005C  2879               	goto	l83
    439  005D  3003               	movlw	3
    440  005E  067B               	xorwf	_controle,w
    441  005F  1D03               	btfss	3,2
-   442  0060  2879               	goto	l96
+   442  0060  2879               	goto	l83
    443                           
-   444                           ;teclado.c: 106: controle=0x04;
+   444                           ;teclado_functions.h: 52: controle=0x04;
    445  0061  3004               	movlw	4
    446  0062  00F9               	movwf	??_keyPressed
    447  0063  0879               	movf	??_keyPressed,w
    448  0064  00FB               	movwf	_controle
    449                           
-   450                           ;teclado.c: 107: RB0=0x01;
+   450                           ;teclado_functions.h: 53: RB0=0x01;
    451  0065  1406               	bsf	6,0	;volatile
    452                           
-   453                           ;teclado.c: 108: RB1=0x01;
+   453                           ;teclado_functions.h: 54: RB1=0x01;
    454  0066  1486               	bsf	6,1	;volatile
    455                           
-   456                           ;teclado.c: 109: RB2=0x00;
+   456                           ;teclado_functions.h: 55: RB2=0x00;
    457  0067  1106               	bcf	6,2	;volatile
    458                           
-   459                           ;teclado.c: 110: RB3=0x01;
+   459                           ;teclado_functions.h: 56: RB3=0x01;
    460  0068  1586               	bsf	6,3	;volatile
    461                           
-   462                           ;teclado.c: 111: if(!RB4)pulse(3);
+   462                           ;teclado_functions.h: 57: if(!RB4)pulse(3);
    463  0069  1A06               	btfsc	6,4	;volatile
-   464  006A  286D               	goto	l97
+   464  006A  286D               	goto	l84
    465  006B  3003               	movlw	3
    466  006C  2894               	goto	L1
-   467  006D                     l97:	
+   467  006D                     l84:	
    468                           
-   469                           ;teclado.c: 112: else if(!RB5)pulse(6);
+   469                           ;teclado_functions.h: 58: else if(!RB5)pulse(6);
    470  006D  1A86               	btfsc	6,5	;volatile
-   471  006E  2871               	goto	l99
+   471  006E  2871               	goto	l86
    472  006F  3006               	movlw	6
    473  0070  2894               	goto	L1
-   474  0071                     l99:	
+   474  0071                     l86:	
    475                           
-   476                           ;teclado.c: 113: else if(!RB6)pulse(9);
+   476                           ;teclado_functions.h: 59: else if(!RB6)pulse(9);
    477  0071  1B06               	btfsc	6,6	;volatile
-   478  0072  2875               	goto	l101
+   478  0072  2875               	goto	l88
    479  0073  3009               	movlw	9
    480  0074  2894               	goto	L1
-   481  0075                     l101:	
+   481  0075                     l88:	
    482                           
-   483                           ;teclado.c: 114: else if(!RB7)pulse(12);
+   483                           ;teclado_functions.h: 60: else if(!RB7)pulse(12);
    484  0075  1B86               	btfsc	6,7	;volatile
-   485  0076  2897               	goto	l663
+   485  0076  2897               	goto	l661
    486  0077  300C               	movlw	12
    487  0078  2894               	goto	L1
-   488  0079                     l96:	
-   489                           ;teclado.c: 115: }else if(RB3 && controle==0x04){
+   488  0079                     l83:	
+   489                           ;teclado_functions.h: 61: }else if(RB3 && controle==0x04){
    490                           
    491  0079  1D86               	btfss	6,3	;volatile
-   492  007A  2897               	goto	l663
+   492  007A  2897               	goto	l661
    493  007B  3004               	movlw	4
    494  007C  067B               	xorwf	_controle,w
    495  007D  1D03               	btfss	3,2
-   496  007E  2897               	goto	l663
+   496  007E  2897               	goto	l661
    497                           
-   498                           ;teclado.c: 116: controle=0x01;
+   498                           ;teclado_functions.h: 62: controle=0x01;
    499  007F  01FB               	clrf	_controle
    500  0080  0AFB               	incf	_controle,f
    501                           
-   502                           ;teclado.c: 117: RB0=0x01;
+   502                           ;teclado_functions.h: 63: RB0=0x01;
    503  0081  1406               	bsf	6,0	;volatile
    504                           
-   505                           ;teclado.c: 118: RB1=0x01;
+   505                           ;teclado_functions.h: 64: RB1=0x01;
    506  0082  1486               	bsf	6,1	;volatile
    507                           
-   508                           ;teclado.c: 119: RB2=0x01;
+   508                           ;teclado_functions.h: 65: RB2=0x01;
    509  0083  1506               	bsf	6,2	;volatile
    510                           
-   511                           ;teclado.c: 120: RB3=0x00;
+   511                           ;teclado_functions.h: 66: RB3=0x00;
    512  0084  1186               	bcf	6,3	;volatile
    513                           
-   514                           ;teclado.c: 121: if(!RB4)pulse(13);
+   514                           ;teclado_functions.h: 67: if(!RB4)pulse(13);
    515  0085  1A06               	btfsc	6,4	;volatile
-   516  0086  2889               	goto	l106
+   516  0086  2889               	goto	l93
    517  0087  300D               	movlw	13
    518  0088  2894               	goto	L1
-   519  0089                     l106:	
+   519  0089                     l93:	
    520                           
-   521                           ;teclado.c: 122: else if(!RB5)pulse(14);
+   521                           ;teclado_functions.h: 68: else if(!RB5)pulse(14);
    522  0089  1A86               	btfsc	6,5	;volatile
-   523  008A  288D               	goto	l108
+   523  008A  288D               	goto	l95
    524  008B  300E               	movlw	14
    525  008C  2894               	goto	L1
-   526  008D                     l108:	
+   526  008D                     l95:	
    527                           
-   528                           ;teclado.c: 123: else if(!RB6)pulse(15);
+   528                           ;teclado_functions.h: 69: else if(!RB6)pulse(15);
    529  008D  1B06               	btfsc	6,6	;volatile
-   530  008E  2891               	goto	l110
+   530  008E  2891               	goto	l97
    531  008F  300F               	movlw	15
    532  0090  2894               	goto	L1
-   533  0091                     l110:	
+   533  0091                     l97:	
    534                           
-   535                           ;teclado.c: 124: else if(!RB7)pulse(16);
+   535                           ;teclado_functions.h: 70: else if(!RB7)pulse(16);
    536  0091  1B86               	btfsc	6,7	;volatile
-   537  0092  2897               	goto	l663
+   537  0092  2897               	goto	l661
    538  0093  3010               	movlw	16
    539  0094                     L1:	
    540  0094  120A  118A  2099   	fcall	_pulse
-   541  0097                     l663:	
+   541  0097                     l661:	
    542                           
-   543                           ;teclado.c: 125: }
-   544                           ;teclado.c: 126: flag=0;
+   543                           ;teclado_functions.h: 71: }
+   544                           ;teclado_functions.h: 72: flag=0;
    545  0097  107A               	bcf	_flag/(0+8),_flag& (0+7)
    546  0098  0008               	return
    547  0099                     __end_of_keyPressed:	
@@ -556,7 +556,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    550  0099                     __ptext2:	
    551 ;; *************** function _pulse *****************
    552 ;; Defined at:
-   553 ;;		line 71 in file "teclado.c"
+   553 ;;		line 18 in file "teclado_functions.h"
    554 ;; Parameters:    Size  Location     Type
    555 ;;  number          1    wreg     unsigned char 
    556 ;; Auto vars:     Size  Location     Type
@@ -594,21 +594,21 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    588                           ;pulse@number stored from wreg
    589  0099  00F7               	movwf	pulse@number
    590                           
-   591                           ;teclado.c: 72: char i;
-   592                           ;teclado.c: 74: for(i=0;i<number;i++){
+   591                           ;teclado_functions.h: 19: char i;
+   592                           ;teclado_functions.h: 21: for(i=0;i<number;i++){
    593  009A  01F8               	clrf	pulse@i
-   594  009B                     l581:	
+   594  009B                     l579:	
    595  009B  0877               	movf	pulse@number,w
    596  009C  0278               	subwf	pulse@i,w
    597  009D  1803               	btfsc	3,0
    598  009E  0008               	return
    599                           
-   600                           ;teclado.c: 75: RC0=0x01;
+   600                           ;teclado_functions.h: 22: RC0=0x01;
    601  009F  1283               	bcf	3,5	;RP0=0, select bank0
    602  00A0  1303               	bcf	3,6	;RP1=0, select bank0
    603  00A1  1407               	bsf	7,0	;volatile
    604                           
-   605                           ;teclado.c: 76: _delay((unsigned long)((500)*(20000000/4000.0)));
+   605                           ;teclado_functions.h: 23: _delay((unsigned long)((500)*(20000000/4000.0)));
    606  00A2  300D               	movlw	13
    607  00A3  00F6               	movwf	??_pulse+2
    608  00A4  30AF               	movlw	175
@@ -624,12 +624,12 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    618  00AD  28A8               	goto	u287
    619  00AE  0000               	nop
    620                           
-   621                           ;teclado.c: 77: RC0=0x00;
+   621                           ;teclado_functions.h: 24: RC0=0x00;
    622  00AF  1283               	bcf	3,5	;RP0=0, select bank0
    623  00B0  1303               	bcf	3,6	;RP1=0, select bank0
    624  00B1  1007               	bcf	7,0	;volatile
    625                           
-   626                           ;teclado.c: 78: _delay((unsigned long)((500)*(20000000/4000.0)));
+   626                           ;teclado_functions.h: 25: _delay((unsigned long)((500)*(20000000/4000.0)));
    627  00B2  300D               	movlw	13
    628  00B3  00F6               	movwf	??_pulse+2
    629  00B4  30AF               	movlw	175
@@ -648,14 +648,14 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    642  00C0  00F4               	movwf	??_pulse
    643  00C1  0874               	movf	??_pulse,w
    644  00C2  07F8               	addwf	pulse@i,f
-   645  00C3  289B               	goto	l581
+   645  00C3  289B               	goto	l579
    646  00C4                     __end_of_pulse:	
    647                           
    648                           	psect	text3
    649  00EB                     __ptext3:	
    650 ;; *************** function _interrupcao *****************
    651 ;; Defined at:
-   652 ;;		line 27 in file "teclado.c"
+   652 ;;		line 8 in file "teclado.c"
    653 ;; Parameters:    Size  Location     Type
    654 ;;		None
    655 ;; Auto vars:     Size  Location     Type
@@ -686,20 +686,20 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    680                           ;psect for function _interrupcao
    681  00EB                     _interrupcao:	
    682                           
-   683                           ;teclado.c: 30: if(TMR0IF){
+   683                           ;teclado.c: 11: if(TMR0IF){
    684  00EB  1D0B               	btfss	11,2	;volatile
-   685  00EC  28F1               	goto	i1l62
+   685  00EC  28F1               	goto	i1l104
    686                           
-   687                           ;teclado.c: 31: flag=1;
+   687                           ;teclado.c: 12: flag=1;
    688  00ED  147A               	bsf	_flag/(0+8),_flag& (0+7)
    689                           
-   690                           ;teclado.c: 32: TMR0IF = 0x00;
+   690                           ;teclado.c: 13: TMR0IF = 0x00;
    691  00EE  110B               	bcf	11,2	;volatile
    692                           
-   693                           ;teclado.c: 33: TMR0 = 0x89;
+   693                           ;teclado.c: 14: TMR0 = 0x89;
    694  00EF  3089               	movlw	137
    695  00F0  0081               	movwf	1	;volatile
-   696  00F1                     i1l62:	
+   696  00F1                     i1l104:	
    697  00F1  0873               	movf	??_interrupcao+3,w
    698  00F2  00FF               	movwf	127
    699  00F3  0872               	movf	??_interrupcao+2,w
@@ -877,15 +877,15 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.36 build -262312587 
-Symbol Table                                                                                   Mon Apr 18 21:36:36 2016
+Symbol Table                                                                                   Tue Apr 26 14:19:43 2016
 
-            __CFG_CP$OFF 0000                       l81 0035                       l90 0053  
-                     l83 0039                       l92 0057                       l78 003D  
-                     l87 005B                       l79 0031                       l96 0079  
-                     l88 004F                       l97 006D                       l99 0071  
-                    l101 0075                      l110 0091                      l106 0089  
-                    l108 008D                      l581 009B                      l663 0097  
-                    l695 00E3                      _GIE 005F                      _RB0 0030  
+            __CFG_CP$OFF 0000                       l70 0039                       l65 003D  
+                     l74 005B                       l66 0031                       l83 0079  
+                     l75 004F                       l84 006D                       l68 0035  
+                     l93 0089                       l77 0053                       l86 0071  
+                     l95 008D                       l79 0057                       l88 0075  
+                     l97 0091                      l661 0097                      l579 009B  
+                    l693 00E3                      _GIE 005F                      _RB0 0030  
                     _RB1 0031                      _RC0 0038                      _RB2 0032  
                     _RB3 0033                      _RB4 0034                      _RB5 0035  
                     _RB6 0036                      _RB7 0037                      _PS0 0408  
@@ -893,10 +893,10 @@ Symbol Table                                                                    
                     u287 00A8                      u297 00B8                      _PSA 040B  
                     fsr0 0004             __CFG_FOSC$HS 0000             __CFG_LVP$OFF 0000  
                    _T0CS 040D                     _T0SE 040C                     _PEIE 005E  
-                   i1l62 00F1                     _TMR0 0001             __CFG_WRT$OFF 0000  
-                   _flag 03D0                     _main 00C4                     btemp 007E  
-                   ltemp 007E                     start 0012                     ttemp 007E  
-                   wtemp 007E                    ?_main 0070            __CFG_WDTE$OFF 0000  
+                   _TMR0 0001             __CFG_WRT$OFF 0000                     _flag 03D0  
+                   _main 00C4                     btemp 007E                     ltemp 007E  
+                   start 0012                     ttemp 007E                     wtemp 007E  
+                  ?_main 0070            __CFG_WDTE$OFF 0000                    i1l104 00F1  
                   _PORTB 0006                    _PORTC 0007                    _TRISB 0086  
                   _TRISC 0087                    _pulse 0099           __pbitbssCOMMON 03D0  
          __CFG_BOREN$OFF 0000                    pclath 000A                    ltemp0 007E  

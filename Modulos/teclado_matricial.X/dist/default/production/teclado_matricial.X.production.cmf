@@ -11,10 +11,6 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Paulo\AppData\Local\Temp\s4og.obj
-reset_vec CODE 0 0 0 3 2
-end_init CODE 0 12 12 3 2
-config CONFIG 0 2007 2007 1 2
 $dist/default/production\teclado_matricial.X.production.obj
 cinit CODE 0 15 15 9 2
 text1 CODE 0 1E 1E 7B 2
@@ -26,6 +22,10 @@ cstackCOMMON COMMON 1 70 70 A 1
 intentry CODE 0 4 4 E 2
 bitbssCOMMON COMMON 1 3D0 7A 1 1
 dataCOMMON COMMON 1 7B 7B 1 1
+$C:\Users\Paulo\AppData\Local\Temp\s31k.obj
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 12 12 3 2
+config CONFIG 0 2007 2007 1 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -72,90 +72,90 @@ STRING FD-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\teclado_matricial.X.production.obj
-15 cinit CODE >249:C:\Users\Paulo\AppData\Local\Temp\s4og.
-15 cinit CODE >252:C:\Users\Paulo\AppData\Local\Temp\s4og.
-15 cinit CODE >271:C:\Users\Paulo\AppData\Local\Temp\s4og.
-16 cinit CODE >276:C:\Users\Paulo\AppData\Local\Temp\s4og.
-19 cinit CODE >277:C:\Users\Paulo\AppData\Local\Temp\s4og.
-1A cinit CODE >283:C:\Users\Paulo\AppData\Local\Temp\s4og.
-1A cinit CODE >285:C:\Users\Paulo\AppData\Local\Temp\s4og.
-1B cinit CODE >286:C:\Users\Paulo\AppData\Local\Temp\s4og.
-4 intentry CODE >27:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-EB text3 CODE >27:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-EB text3 CODE >30:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-ED text3 CODE >31:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-EE text3 CODE >32:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-EF text3 CODE >33:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-F1 text3 CODE >36:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-99 text2 CODE >71:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-9A text2 CODE >74:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-9F text2 CODE >75:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-A2 text2 CODE >76:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-AF text2 CODE >77:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-B2 text2 CODE >78:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-BF text2 CODE >74:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-1E text1 CODE >83:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-1E text1 CODE >85:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-25 text1 CODE >86:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-29 text1 CODE >87:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-2A text1 CODE >88:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-2B text1 CODE >89:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-2C text1 CODE >90:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-2D text1 CODE >91:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-31 text1 CODE >92:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-35 text1 CODE >93:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-39 text1 CODE >94:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-3D text1 CODE >95:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-43 text1 CODE >96:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-47 text1 CODE >97:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-48 text1 CODE >98:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-49 text1 CODE >99:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-4A text1 CODE >100:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-4B text1 CODE >101:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-4F text1 CODE >102:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-53 text1 CODE >103:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-57 text1 CODE >104:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-5B text1 CODE >105:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-61 text1 CODE >106:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-65 text1 CODE >107:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-66 text1 CODE >108:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-67 text1 CODE >109:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-68 text1 CODE >110:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-69 text1 CODE >111:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-6D text1 CODE >112:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-71 text1 CODE >113:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-75 text1 CODE >114:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-79 text1 CODE >115:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-7F text1 CODE >116:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-81 text1 CODE >117:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-82 text1 CODE >118:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-83 text1 CODE >119:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-84 text1 CODE >120:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-85 text1 CODE >121:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-89 text1 CODE >122:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-8D text1 CODE >123:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-91 text1 CODE >124:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-97 text1 CODE >126:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-98 text1 CODE >127:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-C4 maintext CODE >40:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-C4 maintext CODE >43:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-C8 maintext CODE >44:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-C9 maintext CODE >45:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-CA maintext CODE >46:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-CB maintext CODE >47:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-CC maintext CODE >48:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-CD maintext CODE >49:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-CE maintext CODE >52:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-CF maintext CODE >53:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-D0 maintext CODE >54:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-D1 maintext CODE >55:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-D5 maintext CODE >57:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-D8 maintext CODE >58:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-DB maintext CODE >59:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-DF maintext CODE >60:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-E3 maintext CODE >63:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-E5 maintext CODE >64:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
-EA maintext CODE >61:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+15 cinit CODE >249:C:\Users\Paulo\AppData\Local\Temp\s31k.
+15 cinit CODE >252:C:\Users\Paulo\AppData\Local\Temp\s31k.
+15 cinit CODE >271:C:\Users\Paulo\AppData\Local\Temp\s31k.
+16 cinit CODE >276:C:\Users\Paulo\AppData\Local\Temp\s31k.
+19 cinit CODE >277:C:\Users\Paulo\AppData\Local\Temp\s31k.
+1A cinit CODE >283:C:\Users\Paulo\AppData\Local\Temp\s31k.
+1A cinit CODE >285:C:\Users\Paulo\AppData\Local\Temp\s31k.
+1B cinit CODE >286:C:\Users\Paulo\AppData\Local\Temp\s31k.
+4 intentry CODE >8:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+EB text3 CODE >8:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+EB text3 CODE >11:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+ED text3 CODE >12:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+EE text3 CODE >13:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+EF text3 CODE >14:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+F1 text3 CODE >17:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+99 text2 CODE >18:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+9A text2 CODE >21:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+9F text2 CODE >22:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+A2 text2 CODE >23:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+AF text2 CODE >24:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+B2 text2 CODE >25:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+BF text2 CODE >21:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+1E text1 CODE >30:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+1E text1 CODE >31:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+25 text1 CODE >32:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+29 text1 CODE >33:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+2A text1 CODE >34:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+2B text1 CODE >35:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+2C text1 CODE >36:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+2D text1 CODE >37:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+31 text1 CODE >38:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+35 text1 CODE >39:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+39 text1 CODE >40:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+3D text1 CODE >41:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+43 text1 CODE >42:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+47 text1 CODE >43:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+48 text1 CODE >44:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+49 text1 CODE >45:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+4A text1 CODE >46:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+4B text1 CODE >47:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+4F text1 CODE >48:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+53 text1 CODE >49:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+57 text1 CODE >50:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+5B text1 CODE >51:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+61 text1 CODE >52:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+65 text1 CODE >53:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+66 text1 CODE >54:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+67 text1 CODE >55:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+68 text1 CODE >56:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+69 text1 CODE >57:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+6D text1 CODE >58:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+71 text1 CODE >59:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+75 text1 CODE >60:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+79 text1 CODE >61:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+7F text1 CODE >62:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+81 text1 CODE >63:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+82 text1 CODE >64:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+83 text1 CODE >65:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+84 text1 CODE >66:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+85 text1 CODE >67:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+89 text1 CODE >68:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+8D text1 CODE >69:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+91 text1 CODE >70:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+97 text1 CODE >72:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+98 text1 CODE >73:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado_functions.h
+C4 maintext CODE >21:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+C4 maintext CODE >23:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+C8 maintext CODE >24:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+C9 maintext CODE >25:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+CA maintext CODE >26:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+CB maintext CODE >27:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+CC maintext CODE >28:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+CD maintext CODE >29:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+CE maintext CODE >32:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+CF maintext CODE >33:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+D0 maintext CODE >34:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+D1 maintext CODE >35:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+D5 maintext CODE >37:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+D8 maintext CODE >38:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+DB maintext CODE >39:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+DF maintext CODE >40:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+E3 maintext CODE >43:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+E5 maintext CODE >44:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
+EA maintext CODE >41:C:\Users\Paulo\Dropbox\UEFS\2015.2\Disciplinas\Microcontroladores\ProjetoFinal\Projeto\teclado_matricial.X\teclado.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -183,12 +183,12 @@ _PEIE 5E 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 _T0CS 40D 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 _T0SE 40C 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 _TMR0 1 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Paulo\AppData\Local\Temp\s4og.obj
+___sp 0 0 STACK 2 stack C:\Users\Paulo\AppData\Local\Temp\s31k.obj
 _flag 3D0 -356 COMMON 1 bitbssCOMMON dist/default/production\teclado_matricial.X.production.obj
 _main 188 0 CODE 0 maintext dist/default/production\teclado_matricial.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
-start 24 0 CODE 0 init C:\Users\Paulo\AppData\Local\Temp\s4og.obj
+start 24 0 CODE 0 init C:\Users\Paulo\AppData\Local\Temp\s31k.obj
 ttemp 7E 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
@@ -201,12 +201,12 @@ ttemp2 84 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 ttemp3 87 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 ttemp4 7F 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
-intlevel0 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s4og.obj
-intlevel1 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s4og.obj
-intlevel2 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s4og.obj
-intlevel3 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s4og.obj
-intlevel4 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s4og.obj
-intlevel5 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s4og.obj
+intlevel0 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s31k.obj
+intlevel1 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s31k.obj
+intlevel2 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s31k.obj
+intlevel3 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s31k.obj
+intlevel4 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s31k.obj
+intlevel5 0 0 CODE 0 functab C:\Users\Paulo\AppData\Local\Temp\s31k.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 wtemp1 80 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 wtemp2 82 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
@@ -228,7 +228,7 @@ __size_of_pulse 0 0 ABS 0 - dist/default/production\teclado_matricial.X.producti
 start_initialization 2A 0 CODE 0 cinit dist/default/production\teclado_matricial.X.production.obj
 _TMR0IE 5D 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 _TMR0IF 5A 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\Paulo\AppData\Local\Temp\s4og.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Paulo\AppData\Local\Temp\s31k.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -284,14 +284,14 @@ __S3 0 0 ABS 0 - -
 saved_w 7E 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 __HidataCOMMON 0 0 ABS 0 idataCOMMON -
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Paulo\AppData\Local\Temp\s4og.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Paulo\AppData\Local\Temp\s31k.obj
 __pmaintext 188 0 CODE 0 maintext dist/default/production\teclado_matricial.X.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
-stackhi 0 0 ABS 0 - C:\Users\Paulo\AppData\Local\Temp\s4og.obj
-stacklo 0 0 ABS 0 - C:\Users\Paulo\AppData\Local\Temp\s4og.obj
+stackhi 0 0 ABS 0 - C:\Users\Paulo\AppData\Local\Temp\s31k.obj
+stacklo 0 0 ABS 0 - C:\Users\Paulo\AppData\Local\Temp\s31k.obj
 __end_of_interrupcao 1F8 0 CODE 0 text3 dist/default/production\teclado_matricial.X.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\teclado_matricial.X.production.obj
 __Lspace_0 0 0 ABS 0 - -

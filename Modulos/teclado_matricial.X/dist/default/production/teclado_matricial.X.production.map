@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.36\dat\en_msgs.txt -cs \
   -h+dist/default/production\teclado_matricial.X.production.sym \
   --cmf=dist/default/production\teclado_matricial.X.production.cmf -z \
-  -Q16F877A -oC:\Users\Paulo\AppData\Local\Temp\s4og.2 \
+  -Q16F877A -oC:\Users\Paulo\AppData\Local\Temp\s31k.2 \
   -Mdist/default/production/teclado_matricial.X.production.map -E1 -ver=XC8 \
   -ASTACK=0110h-016fh -pstack=STACK -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh \
   -ASTRING=00h-0FFhx32 -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\Paulo\AppData\Local\Temp\s4og.obj \
+  -DENTRY=2 -k C:\Users\Paulo\AppData\Local\Temp\s31k.obj \
   dist/default/production\teclado_matricial.X.production.obj 
 
 Object code version is 3.11
@@ -28,7 +28,7 @@ Machine type is 16F877A
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Paulo\AppData\Local\Temp\s4og.obj
+C:\Users\Paulo\AppData\Local\Temp\s31k.obj
                 end_init                             12       12        3        8       0
                 reset_vec                             0        0        3        0       0
                 config                             2007     2007        1     400E       0
@@ -318,7 +318,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 40 in file "teclado.c"
+		line 21 in file "teclado.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -347,7 +347,7 @@ Total ram usage:        0 bytes
 
  *************** function _keyPressed *****************
  Defined at:
-		line 83 in file "teclado.c"
+		line 30 in file "teclado_functions.h"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -377,7 +377,7 @@ Total ram usage:        1 bytes
 
  *************** function _pulse *****************
  Defined at:
-		line 71 in file "teclado.c"
+		line 18 in file "teclado_functions.h"
  Parameters:    Size  Location     Type
   number          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -408,7 +408,7 @@ Total ram usage:        5 bytes
 
  *************** function _interrupcao *****************
  Defined at:
-		line 27 in file "teclado.c"
+		line 8 in file "teclado.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -439,13 +439,17 @@ Total ram usage:        4 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-teclado.c
-		_main          		CODE           	00C4	0000	40
-		_interrupcao   		CODE           	00EB	0000	18
+teclado_functions.h
 		_pulse         		CODE           	0099	0000	44
 		_keyPressed    		CODE           	001E	0000	124
 
-teclado.c estimated size: 226
+teclado_functions.h estimated size: 168
+
+teclado.c
+		_main          		CODE           	00C4	0000	40
+		_interrupcao   		CODE           	00EB	0000	18
+
+teclado.c estimated size: 58
 
 shared
 		__initialization		CODE           	0015	0000	6

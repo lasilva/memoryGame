@@ -35,8 +35,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TXSTAbits `VS81 ~T0 @X0 0 e@152 ]
 "1031
 [v _TXREG `Vuc ~T0 @X0 0 e@25 ]
-"2513
-[v _RB0 `Vb ~T0 @X0 0 e@48 ]
+"2533
+[v _RC0 `Vb ~T0 @X0 0 e@56 ]
 [v F1091 `(v ~T0 @X0 1 tf1`ul ]
 "152 C:\Program Files (x86)\Microchip\xc8\v1.36\include\pic.h
 [v __delay `JF1091 ~T0 @X0 0 e ]
@@ -50,16 +50,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 "2559 C:\Program Files (x86)\Microchip\xc8\v1.36\include\pic16f877a.h
 [v _RCIF `Vb ~T0 @X0 0 e@101 ]
 [p mainexit ]
+"2703
+[v _TRISC0 `Vb ~T0 @X0 0 e@1080 ]
+"270
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "1124
 [v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
 "2175
 [v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
 "2036
 [v _CMCON `Vuc ~T0 @X0 0 e@156 ]
-"1337
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"209
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "2443
 [v _GIE `Vb ~T0 @X0 0 e@95 ]
 "2483
@@ -1271,293 +1271,292 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;functions_uart.h: 28: getchar_active = 1;
 "28
 [e = _getchar_active -> -> 1 `i `uc ]
-[; ;functions_uart.h: 30: while(getchar_active)
-"30
+[; ;functions_uart.h: 29: while(getchar_active)
+"29
 [e $U 103  ]
 [e :U 104 ]
-[; ;functions_uart.h: 31: continue;
-"31
+[; ;functions_uart.h: 30: continue;
+"30
 [e $U 103  ]
 [e :U 103 ]
-"30
+"29
 [e $ != -> _getchar_active `i -> -> -> 0 `i `uc `i 104  ]
 [e :U 105 ]
-[; ;functions_uart.h: 32: return RCREG;
-"32
+[; ;functions_uart.h: 31: return RCREG;
+"31
 [e ) _RCREG ]
 [e $UE 102  ]
-[; ;functions_uart.h: 33: }
-"33
+[; ;functions_uart.h: 32: }
+"32
 [e :UE 102 ]
 }
-"35
+"34
 [v _getche `(uc ~T0 @X0 1 ef ]
 {
-[; ;functions_uart.h: 35: unsigned char getche(void){
+[; ;functions_uart.h: 34: unsigned char getche(void){
 [e :U _getche ]
 [f ]
-"36
+"35
 [v _c `uc ~T0 @X0 1 a ]
-[; ;functions_uart.h: 36: unsigned char c;
-[; ;functions_uart.h: 37: putch(c = getch());
-"37
+[; ;functions_uart.h: 35: unsigned char c;
+[; ;functions_uart.h: 36: putch(c = getch());
+"36
 [e ( _putch (1 = _c ( _getch ..  ]
-[; ;functions_uart.h: 38: return c;
-"38
+[; ;functions_uart.h: 37: return c;
+"37
 [e ) _c ]
 [e $UE 106  ]
-[; ;functions_uart.h: 39: }
-"39
+[; ;functions_uart.h: 38: }
+"38
 [e :UE 106 ]
 }
-"41
+"40
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;functions_uart.h: 41: void putch(unsigned char byte){
+[; ;functions_uart.h: 40: void putch(unsigned char byte){
 [e :U _putch ]
 [v _byte `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;functions_uart.h: 42: while (!TXSTAbits.TRMT);
-"42
+[; ;functions_uart.h: 41: while (!TXSTAbits.TRMT);
+"41
 [e $U 108  ]
 [e :U 109 ]
 [e :U 108 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 109  ]
 [e :U 110 ]
-[; ;functions_uart.h: 43: TXREG = byte;
-"43
+[; ;functions_uart.h: 42: TXREG = byte;
+"42
 [e = _TXREG _byte ]
-[; ;functions_uart.h: 44: if ('\n' == byte) {
-"44
+[; ;functions_uart.h: 43: if ('\n' == byte) {
+"43
 [e $ ! == -> 10 `ui -> _byte `ui 111  ]
 {
-[; ;functions_uart.h: 45: while (!TXSTAbits.TRMT);
-"45
+[; ;functions_uart.h: 44: while (!TXSTAbits.TRMT);
+"44
 [e $U 112  ]
 [e :U 113 ]
 [e :U 112 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 113  ]
 [e :U 114 ]
-[; ;functions_uart.h: 46: TXREG = '\r';
-"46
+[; ;functions_uart.h: 45: TXREG = '\r';
+"45
 [e = _TXREG -> -> 13 `ui `uc ]
-"47
+"46
 }
 [e :U 111 ]
-[; ;functions_uart.h: 47: }
-[; ;functions_uart.h: 48: return;
-"48
+[; ;functions_uart.h: 46: }
+[; ;functions_uart.h: 47: return;
+"47
 [e $UE 107  ]
-[; ;functions_uart.h: 49: }
-"49
+[; ;functions_uart.h: 48: }
+"48
 [e :UE 107 ]
 }
-"52
+"51
 [v _pulse `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;functions_uart.h: 52: void pulse(char number){
+[; ;functions_uart.h: 51: void pulse(char number){
 [e :U _pulse ]
 [v _number `uc ~T0 @X0 1 r1 ]
 [f ]
-"53
+"52
 [v _i `uc ~T0 @X0 1 a ]
-[; ;functions_uart.h: 53: char i;
-[; ;functions_uart.h: 55: for(i=0;i<number;i++){
-"55
+[; ;functions_uart.h: 52: char i;
+[; ;functions_uart.h: 54: for(i=0;i<number;i++){
+"54
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 119  ]
 [e :U 116 ]
 {
-[; ;functions_uart.h: 56: RB0=0x01;
-"56
-[e = _RB0 -> -> 1 `i `b ]
-[; ;functions_uart.h: 57: _delay((unsigned long)((500)*(20000000/4000.0)));
-"57
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;functions_uart.h: 58: RB0=0x00;
-"58
-[e = _RB0 -> -> 0 `i `b ]
-[; ;functions_uart.h: 59: _delay((unsigned long)((500)*(20000000/4000.0)));
-"59
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"60
-}
+[; ;functions_uart.h: 55: RC0=0x01;
 "55
+[e = _RC0 -> -> 1 `i `b ]
+[; ;functions_uart.h: 56: _delay((unsigned long)((500)*(20000000/4000.0)));
+"56
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;functions_uart.h: 57: RC0=0x00;
+"57
+[e = _RC0 -> -> 0 `i `b ]
+[; ;functions_uart.h: 58: _delay((unsigned long)((500)*(20000000/4000.0)));
+"58
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"59
+}
+"54
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 119 ]
 [e $ < -> _i `i -> _number `i 116  ]
 [e :U 117 ]
-"60
+"59
 }
+[; ;functions_uart.h: 59: }
 [; ;functions_uart.h: 60: }
-[; ;functions_uart.h: 61: }
-"61
+"60
 [e :UE 115 ]
 }
-"65
+"64
 [v _is_numeric `(i ~T0 @X0 1 ef1`*Cuc ]
 {
-[; ;functions_uart.h: 65: int is_numeric(const char *str){
+[; ;functions_uart.h: 64: int is_numeric(const char *str){
 [e :U _is_numeric ]
 [v _str `*Cuc ~T0 @X0 1 r1 ]
 [f ]
-"66
+"65
 [v _res `i ~T0 @X0 1 a ]
-[; ;functions_uart.h: 66: int res = 1;
+[; ;functions_uart.h: 65: int res = 1;
 [e = _res -> 1 `i ]
-[; ;functions_uart.h: 71: while(*str){
-"71
+[; ;functions_uart.h: 69: while(*str){
+"69
 [e $U 121  ]
 [e :U 122 ]
 {
-[; ;functions_uart.h: 72: if(!isdigit(*str)){
-"72
+[; ;functions_uart.h: 70: if(!isdigit(*str)){
+"70
 [e $ ! ! ( _isdigit (1 *U _str 124  ]
 {
-[; ;functions_uart.h: 73: res = 0;
-"73
+[; ;functions_uart.h: 71: res = 0;
+"71
 [e = _res -> 0 `i ]
-[; ;functions_uart.h: 74: break;
-"74
+[; ;functions_uart.h: 72: break;
+"72
 [e $U 123  ]
-"75
+"73
 }
 [e :U 124 ]
-[; ;functions_uart.h: 75: }
-[; ;functions_uart.h: 77: str++;
-"77
+[; ;functions_uart.h: 73: }
+[; ;functions_uart.h: 75: str++;
+"75
 [e ++ _str * -> -> 1 `i `x -> -> # *U _str `i `x ]
-"78
+"76
 }
 [e :U 121 ]
-"71
+"69
 [e $ != -> *U _str `i -> -> -> 0 `i `Cuc `i 122  ]
 [e :U 123 ]
-[; ;functions_uart.h: 78: }
-[; ;functions_uart.h: 80: return res;
-"80
+[; ;functions_uart.h: 76: }
+[; ;functions_uart.h: 78: return res;
+"78
 [e ) _res ]
 [e $UE 120  ]
-[; ;functions_uart.h: 81: }
-"81
+[; ;functions_uart.h: 79: }
+"79
 [e :UE 120 ]
 }
-"84
+"82
 [v _manipula_entrada `(v ~T0 @X0 1 ef ]
 {
-[; ;functions_uart.h: 84: void manipula_entrada(){
+[; ;functions_uart.h: 82: void manipula_entrada(){
 [e :U _manipula_entrada ]
 [f ]
-[; ;functions_uart.h: 85: if(is_numeric(entrada)){
-"85
+[; ;functions_uart.h: 83: if(is_numeric(entrada)){
+"83
 [e $ ! != ( _is_numeric (1 -> &U _entrada `*Cuc -> 0 `i 126  ]
 {
-"86
+"84
 [v _number `i ~T0 @X0 1 a ]
-[; ;functions_uart.h: 86: int number=atoi(entrada);
+[; ;functions_uart.h: 84: int number=atoi(entrada);
 [e = _number ( _atoi (1 -> &U _entrada `*Cuc ]
-[; ;functions_uart.h: 87: pulse(number);
-"87
+[; ;functions_uart.h: 85: pulse(number);
+"85
 [e ( _pulse (1 -> _number `uc ]
-"88
+"86
 }
-[; ;functions_uart.h: 88: }else printf("Alerta\n");
+[; ;functions_uart.h: 86: }else printf("Alerta\n");
 [e $U 127  ]
 [e :U 126 ]
 [e ( _printf :s 1C ]
 [e :U 127 ]
-[; ;functions_uart.h: 89: }
-"89
+[; ;functions_uart.h: 87: }
+"87
 [e :UE 125 ]
 }
-[; ;uart.c: 5: void UART_write(unsigned char c);
-[v F1407 `(v ~T0 @X0 1 tf ]
-"8 uart.c
-[v _interrupcao `IF1407 ~T0 @X0 1 e ]
+[v F1405 `(v ~T0 @X0 1 tf ]
+"5 uart.c
+[v _interrupcao `IF1405 ~T0 @X0 1 e ]
 {
-[; ;uart.c: 8: void interrupt interrupcao(void){
+[; ;uart.c: 5: void interrupt interrupcao(void){
 [e :U _interrupcao ]
 [f ]
-[; ;uart.c: 12: if (RCIE && RCIF){
-"12
-[e $ ! && _RCIE _RCIF 129  ]
+[; ;uart.c: 9: if (RCIF){
+"9
+[e $ ! _RCIF 129  ]
 {
-[; ;uart.c: 13: getchar_active = 0;
-"13
+[; ;uart.c: 10: getchar_active = 0;
+"10
 [e = _getchar_active -> -> 0 `i `uc ]
-[; ;uart.c: 14: RCREG;
-"14
+[; ;uart.c: 11: RCREG;
+"11
 [e _RCREG ]
-"15
+"12
 }
 [e :U 129 ]
-[; ;uart.c: 15: }
-[; ;uart.c: 16: }
-"16
+[; ;uart.c: 12: }
+[; ;uart.c: 13: }
+"13
 [e :UE 128 ]
 }
-"20
+"17
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;uart.c: 20: void main(){
+[; ;uart.c: 17: void main(){
 [e :U _main ]
 [f ]
-[; ;uart.c: 22: UART_init();
-"22
+[; ;uart.c: 18: TRISC0 = 0;
+"18
+[e = _TRISC0 -> -> 0 `i `b ]
+[; ;uart.c: 19: PORTC = 0;
+"19
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;uart.c: 20: UART_init();
+"20
 [e ( _UART_init ..  ]
-[; ;uart.c: 23: ADCON0 = 0x00;
-"23
+[; ;uart.c: 21: ADCON0 = 0x00;
+"21
 [e = _ADCON0 -> -> 0 `i `uc ]
-[; ;uart.c: 24: ADCON1 = 0x06;
-"24
+[; ;uart.c: 22: ADCON1 = 0x06;
+"22
 [e = _ADCON1 -> -> 6 `i `uc ]
-[; ;uart.c: 25: CMCON = 0x07;
-"25
+[; ;uart.c: 23: CMCON = 0x07;
+"23
 [e = _CMCON -> -> 7 `i `uc ]
-[; ;uart.c: 26: TRISB = 0;
-"26
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;uart.c: 27: PORTB = 0;
-"27
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;uart.c: 28: GIE=0x01;
-"28
+[; ;uart.c: 24: GIE=0x01;
+"24
 [e = _GIE -> -> 1 `i `b ]
-[; ;uart.c: 29: PEIE=0x01;
-"29
+[; ;uart.c: 25: PEIE=0x01;
+"25
 [e = _PEIE -> -> 1 `i `b ]
-[; ;uart.c: 31: printf("*** Iniciando UART ***\n");
-"31
+[; ;uart.c: 27: printf("*** Iniciando UART ***\n");
+"27
 [e ( _printf :s 2C ]
-[; ;uart.c: 32: while(1){
-"32
+[; ;uart.c: 28: while(1){
+"28
 [e :U 132 ]
 {
-[; ;uart.c: 33: printf("Digite um numero:\n");
-"33
+[; ;uart.c: 29: printf("Digite um numero:\n");
+"29
 [e ( _printf :s 3C ]
-[; ;uart.c: 34: cgets(entrada);
-"34
+[; ;uart.c: 30: cgets(entrada);
+"30
 [e ( _cgets (1 &U _entrada ]
-[; ;uart.c: 35: printf("\nO numero digitado foi : ");
-"35
+[; ;uart.c: 31: printf("\nO numero digitado foi : ");
+"31
 [e ( _printf :s 4C ]
-[; ;uart.c: 36: printf("%s\n",entrada);
-"36
+[; ;uart.c: 32: printf("%s\n",entrada);
+"32
 [e ( _printf , (. :s 5C -> &U _entrada `*Cuc ]
-[; ;uart.c: 37: manipula_entrada();
-"37
+[; ;uart.c: 33: manipula_entrada();
+"33
 [e ( _manipula_entrada ..  ]
-"38
+"34
 }
 [e :U 131 ]
-"32
+"28
 [e $U 132  ]
 [e :U 133 ]
-[; ;uart.c: 38: }
-[; ;uart.c: 39: }
-"39
+[; ;uart.c: 34: }
+[; ;uart.c: 35: }
+"35
 [e :UE 130 ]
 }
 [p f _printf 8650752 ]

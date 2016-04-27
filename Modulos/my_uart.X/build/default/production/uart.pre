@@ -1650,7 +1650,6 @@ TXEN = 1;
 # 27
 unsigned char getch(){
 getchar_active = 1;
-
 while(getchar_active)
 continue;
 return RCREG;
@@ -1677,9 +1676,9 @@ void pulse(char number){
 char i;
 
 for(i=0;i<number;i++){
-RB0=0x01;
+RC0=0x01;
 _delay((unsigned long)((500)*(20000000/4000.0)));
-RB0=0x00;
+RC0=0x00;
 _delay((unsigned long)((500)*(20000000/4000.0)));
 }
 }
@@ -1688,7 +1687,6 @@ _delay((unsigned long)((500)*(20000000/4000.0)));
 
 int is_numeric(const char *str){
 int res = 1;
-
 
 
 
@@ -1713,14 +1711,11 @@ pulse(number);
 }
 
 # 5 "uart.c"
-void UART_write(unsigned char c);
-
-
 void interrupt interrupcao(void){
 
 
 
-if (RCIE && RCIF){
+if (RCIF){
 getchar_active = 0;
 RCREG;
 }
@@ -1729,13 +1724,12 @@ RCREG;
 
 
 void main(){
-
+TRISC0 = 0;
+PORTC = 0;
 UART_init();
 ADCON0 = 0x00;
 ADCON1 = 0x06;
 CMCON = 0x07;
-TRISB = 0;
-PORTB = 0;
 GIE=0x01;
 PEIE=0x01;
 

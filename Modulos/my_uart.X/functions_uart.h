@@ -9,7 +9,7 @@ bool getchar_active=false;
 char entrada[INPUT_LENGTH];
 
 // --- Hardware ---
-#define led1    RB0
+#define led1    RC0
 
 void UART_init(){
     BRGH = 1; //seleção de baud rate assincrono high
@@ -26,8 +26,7 @@ A função espera até que o  USART Receive Data Register(RCREG) esteja cheio e lê 
 */
 unsigned char getch(){
     getchar_active = true;
-    /* retrieve one byte */
-    while(getchar_active) /* set when register is not empty */
+    while(getchar_active) /* seta quando o registrador nao eh vazio */
         continue;
     return RCREG;
 }
@@ -64,10 +63,9 @@ void pulse(char number){
 // string contém apenas dígitos de 0 a 9
 int is_numeric(const char *str){
  int res = 1; // passou no teste
-
-  // vamos percorrer todos os caracteres da string
+  // Percorre todos os caracteres da string
   // e testar se cada um é um dígito. Se não
-  // for nós marcamos res como 0 e retornamos
+  // for nós marca-se res como 0 e retornamos
   while(*str){
     if(!isdigit(*str)){
       res = 0;

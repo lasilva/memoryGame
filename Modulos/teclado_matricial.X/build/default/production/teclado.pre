@@ -1517,57 +1517,9 @@ extern char * ftoa(float f, int * status);
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-# 19 "teclado.c"
+# 14 "teclado_functions.h"
 unsigned char controle = 0x01;
 bit flag=0;
-
-
-void pulse(char number);
-void keyPressed();
-
-
-void interrupt interrupcao(void){
-
-
-if(TMR0IF){
-flag=1;
-TMR0IF = 0x00;
-TMR0 = 0x89;
-}
-
-}
-
-
-
-void main()
-{
-
-OPTION_REG = 0b10000000;
-T0CS = 0;
-T0SE = 0;
-PSA = 0;
-PS2 = 1;
-PS1 = 1;
-PS0 = 1;
-
-
-GIE=1;
-PEIE=1;
-TMR0IE=1;
-TMR0 = 0x89;
-
-TRISC = 0;
-PORTC = 0;
-TRISB = 0b11110000;
-PORTB=1;
-while(1)
-{
-if(flag){
-keyPressed();
-}
-}
-
-}
 
 
 void pulse(char number){
@@ -1583,7 +1535,6 @@ _delay((unsigned long)((500)*(20000000/4000.0)));
 
 
 void keyPressed(){
-
 if(RB0 && controle==0x01){
 controle=0x02;
 RB0=0x00;
@@ -1626,5 +1577,48 @@ else if(!RB6)pulse(15);
 else if(!RB7)pulse(16);
 }
 flag=0;
+}
+
+# 8 "teclado.c"
+void interrupt interrupcao(void){
+
+
+if(TMR0IF){
+flag=1;
+TMR0IF = 0x00;
+TMR0 = 0x89;
+}
+
+}
+
+
+
+void main(){
+
+OPTION_REG = 0b10000000;
+T0CS = 0;
+T0SE = 0;
+PSA = 0;
+PS2 = 1;
+PS1 = 1;
+PS0 = 1;
+
+
+GIE=1;
+PEIE=1;
+TMR0IE=1;
+TMR0 = 0x89;
+
+TRISC = 0;
+PORTC = 0;
+TRISB = 0b11110000;
+PORTB=1;
+while(1)
+{
+if(flag){
+keyPressed();
+}
+}
+
 }
 
