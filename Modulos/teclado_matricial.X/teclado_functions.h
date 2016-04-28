@@ -12,7 +12,8 @@
 #define row4    RB7
 //controle de varredura
 unsigned char controle = 0x01;
-bit flag=0;
+bit flag_teclado=0;
+char counter_teclado=0;
 
 //Função para pisca o numero de vezes que o numero teclado representa
 void pulse(char number){
@@ -69,5 +70,5 @@ void keyPressed(){
             else if(!row3)pulse(15);
             else if(!row4)pulse(16);
         }
-        flag=0;
+        flag_teclado=0;
 }

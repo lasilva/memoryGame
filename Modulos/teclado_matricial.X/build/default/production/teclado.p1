@@ -1145,266 +1145,272 @@ Version 3.2 HI-TECH Software Intermediate Code
 ]
 [; ;teclado_functions.h: 14: unsigned char controle = 0x01;
 "15
-[v _flag `b ~T0 @X0 1 e ]
-[i _flag
+[v _flag_teclado `b ~T0 @X0 1 e ]
+[i _flag_teclado
 -> 0 `i
 ]
-[; ;teclado_functions.h: 15: bit flag=0;
-"18
+[; ;teclado_functions.h: 15: bit flag_teclado=0;
+"16
+[v _counter_teclado `uc ~T0 @X0 1 e ]
+[i _counter_teclado
+-> -> 0 `i `uc
+]
+[; ;teclado_functions.h: 16: char counter_teclado=0;
+"19
 [v _pulse `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;teclado_functions.h: 18: void pulse(char number){
+[; ;teclado_functions.h: 19: void pulse(char number){
 [e :U _pulse ]
 [v _number `uc ~T0 @X0 1 r1 ]
 [f ]
-"19
+"20
 [v _i `uc ~T0 @X0 1 a ]
-[; ;teclado_functions.h: 19: char i;
-[; ;teclado_functions.h: 21: for(i=0;i<number;i++){
-"21
+[; ;teclado_functions.h: 20: char i;
+[; ;teclado_functions.h: 22: for(i=0;i<number;i++){
+"22
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 104  ]
 [e :U 101 ]
 {
-[; ;teclado_functions.h: 22: RC0=0x01;
-"22
-[e = _RC0 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 23: _delay((unsigned long)((500)*(20000000/4000.0)));
+[; ;teclado_functions.h: 23: RC0=0x01;
 "23
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;teclado_functions.h: 24: RC0=0x00;
+[e = _RC0 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 24: _delay((unsigned long)((500)*(20000000/4000.0)));
 "24
-[e = _RC0 -> -> 0 `i `b ]
-[; ;teclado_functions.h: 25: _delay((unsigned long)((500)*(20000000/4000.0)));
-"25
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;teclado_functions.h: 25: RC0=0x00;
+"25
+[e = _RC0 -> -> 0 `i `b ]
+[; ;teclado_functions.h: 26: _delay((unsigned long)((500)*(20000000/4000.0)));
 "26
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"27
 }
-"21
+"22
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 104 ]
 [e $ < -> _i `i -> _number `i 101  ]
 [e :U 102 ]
-"26
-}
-[; ;teclado_functions.h: 26: }
-[; ;teclado_functions.h: 27: }
 "27
+}
+[; ;teclado_functions.h: 27: }
+[; ;teclado_functions.h: 28: }
+"28
 [e :UE 100 ]
 }
-"30
+"31
 [v _keyPressed `(v ~T0 @X0 1 ef ]
 {
-[; ;teclado_functions.h: 30: void keyPressed(){
+[; ;teclado_functions.h: 31: void keyPressed(){
 [e :U _keyPressed ]
 [f ]
-[; ;teclado_functions.h: 31: if(RB0 && controle==0x01){
-"31
+[; ;teclado_functions.h: 32: if(RB0 && controle==0x01){
+"32
 [e $ ! && _RB0 == -> _controle `i -> 1 `i 106  ]
 {
-[; ;teclado_functions.h: 32: controle=0x02;
-"32
-[e = _controle -> -> 2 `i `uc ]
-[; ;teclado_functions.h: 33: RB0=0x00;
+[; ;teclado_functions.h: 33: controle=0x02;
 "33
-[e = _RB0 -> -> 0 `i `b ]
-[; ;teclado_functions.h: 34: RB1=0x01;
+[e = _controle -> -> 2 `i `uc ]
+[; ;teclado_functions.h: 34: RB0=0x00;
 "34
-[e = _RB1 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 35: RB2=0x01;
+[e = _RB0 -> -> 0 `i `b ]
+[; ;teclado_functions.h: 35: RB1=0x01;
 "35
-[e = _RB2 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 36: RB3=0x01;
+[e = _RB1 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 36: RB2=0x01;
 "36
-[e = _RB3 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 37: if(!RB4)pulse(1);
+[e = _RB2 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 37: RB3=0x01;
 "37
+[e = _RB3 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 38: if(!RB4)pulse(1);
+"38
 [e $ ! ! _RB4 107  ]
 [e ( _pulse (1 -> -> 1 `i `uc ]
 [e $U 108  ]
-"38
+"39
 [e :U 107 ]
-[; ;teclado_functions.h: 38: else if(!RB5)pulse(4);
+[; ;teclado_functions.h: 39: else if(!RB5)pulse(4);
 [e $ ! ! _RB5 109  ]
 [e ( _pulse (1 -> -> 4 `i `uc ]
 [e $U 110  ]
-"39
+"40
 [e :U 109 ]
-[; ;teclado_functions.h: 39: else if(!RB6)pulse(7);
+[; ;teclado_functions.h: 40: else if(!RB6)pulse(7);
 [e $ ! ! _RB6 111  ]
 [e ( _pulse (1 -> -> 7 `i `uc ]
 [e $U 112  ]
-"40
+"41
 [e :U 111 ]
-[; ;teclado_functions.h: 40: else if(!RB7)pulse(10);
+[; ;teclado_functions.h: 41: else if(!RB7)pulse(10);
 [e $ ! ! _RB7 113  ]
 [e ( _pulse (1 -> -> 10 `i `uc ]
 [e :U 113 ]
-"41
+"42
 [e :U 112 ]
 [e :U 110 ]
 [e :U 108 ]
 }
-[; ;teclado_functions.h: 41: }else if(RB1 && controle==0x02){
+[; ;teclado_functions.h: 42: }else if(RB1 && controle==0x02){
 [e $U 114  ]
 [e :U 106 ]
 [e $ ! && _RB1 == -> _controle `i -> 2 `i 115  ]
 {
-[; ;teclado_functions.h: 42: controle=0x03;
-"42
-[e = _controle -> -> 3 `i `uc ]
-[; ;teclado_functions.h: 43: RB0=0x01;
+[; ;teclado_functions.h: 43: controle=0x03;
 "43
-[e = _RB0 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 44: RB1=0x00;
+[e = _controle -> -> 3 `i `uc ]
+[; ;teclado_functions.h: 44: RB0=0x01;
 "44
-[e = _RB1 -> -> 0 `i `b ]
-[; ;teclado_functions.h: 45: RB2=0x01;
+[e = _RB0 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 45: RB1=0x00;
 "45
-[e = _RB2 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 46: RB3=0x01;
+[e = _RB1 -> -> 0 `i `b ]
+[; ;teclado_functions.h: 46: RB2=0x01;
 "46
-[e = _RB3 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 47: if(!RB4)pulse(2);
+[e = _RB2 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 47: RB3=0x01;
 "47
+[e = _RB3 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 48: if(!RB4)pulse(2);
+"48
 [e $ ! ! _RB4 116  ]
 [e ( _pulse (1 -> -> 2 `i `uc ]
 [e $U 117  ]
-"48
+"49
 [e :U 116 ]
-[; ;teclado_functions.h: 48: else if(!RB5)pulse(5);
+[; ;teclado_functions.h: 49: else if(!RB5)pulse(5);
 [e $ ! ! _RB5 118  ]
 [e ( _pulse (1 -> -> 5 `i `uc ]
 [e $U 119  ]
-"49
+"50
 [e :U 118 ]
-[; ;teclado_functions.h: 49: else if(!RB6)pulse(8);
+[; ;teclado_functions.h: 50: else if(!RB6)pulse(8);
 [e $ ! ! _RB6 120  ]
 [e ( _pulse (1 -> -> 8 `i `uc ]
 [e $U 121  ]
-"50
+"51
 [e :U 120 ]
-[; ;teclado_functions.h: 50: else if(!RB7)pulse(11);
+[; ;teclado_functions.h: 51: else if(!RB7)pulse(11);
 [e $ ! ! _RB7 122  ]
 [e ( _pulse (1 -> -> 11 `i `uc ]
 [e :U 122 ]
-"51
+"52
 [e :U 121 ]
 [e :U 119 ]
 [e :U 117 ]
 }
-[; ;teclado_functions.h: 51: }else if(RB2 && controle==0x03){
+[; ;teclado_functions.h: 52: }else if(RB2 && controle==0x03){
 [e $U 123  ]
 [e :U 115 ]
 [e $ ! && _RB2 == -> _controle `i -> 3 `i 124  ]
 {
-[; ;teclado_functions.h: 52: controle=0x04;
-"52
-[e = _controle -> -> 4 `i `uc ]
-[; ;teclado_functions.h: 53: RB0=0x01;
+[; ;teclado_functions.h: 53: controle=0x04;
 "53
-[e = _RB0 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 54: RB1=0x01;
+[e = _controle -> -> 4 `i `uc ]
+[; ;teclado_functions.h: 54: RB0=0x01;
 "54
-[e = _RB1 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 55: RB2=0x00;
+[e = _RB0 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 55: RB1=0x01;
 "55
-[e = _RB2 -> -> 0 `i `b ]
-[; ;teclado_functions.h: 56: RB3=0x01;
+[e = _RB1 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 56: RB2=0x00;
 "56
-[e = _RB3 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 57: if(!RB4)pulse(3);
+[e = _RB2 -> -> 0 `i `b ]
+[; ;teclado_functions.h: 57: RB3=0x01;
 "57
+[e = _RB3 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 58: if(!RB4)pulse(3);
+"58
 [e $ ! ! _RB4 125  ]
 [e ( _pulse (1 -> -> 3 `i `uc ]
 [e $U 126  ]
-"58
+"59
 [e :U 125 ]
-[; ;teclado_functions.h: 58: else if(!RB5)pulse(6);
+[; ;teclado_functions.h: 59: else if(!RB5)pulse(6);
 [e $ ! ! _RB5 127  ]
 [e ( _pulse (1 -> -> 6 `i `uc ]
 [e $U 128  ]
-"59
+"60
 [e :U 127 ]
-[; ;teclado_functions.h: 59: else if(!RB6)pulse(9);
+[; ;teclado_functions.h: 60: else if(!RB6)pulse(9);
 [e $ ! ! _RB6 129  ]
 [e ( _pulse (1 -> -> 9 `i `uc ]
 [e $U 130  ]
-"60
+"61
 [e :U 129 ]
-[; ;teclado_functions.h: 60: else if(!RB7)pulse(12);
+[; ;teclado_functions.h: 61: else if(!RB7)pulse(12);
 [e $ ! ! _RB7 131  ]
 [e ( _pulse (1 -> -> 12 `i `uc ]
 [e :U 131 ]
-"61
+"62
 [e :U 130 ]
 [e :U 128 ]
 [e :U 126 ]
 }
-[; ;teclado_functions.h: 61: }else if(RB3 && controle==0x04){
+[; ;teclado_functions.h: 62: }else if(RB3 && controle==0x04){
 [e $U 132  ]
 [e :U 124 ]
 [e $ ! && _RB3 == -> _controle `i -> 4 `i 133  ]
 {
-[; ;teclado_functions.h: 62: controle=0x01;
-"62
-[e = _controle -> -> 1 `i `uc ]
-[; ;teclado_functions.h: 63: RB0=0x01;
+[; ;teclado_functions.h: 63: controle=0x01;
 "63
-[e = _RB0 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 64: RB1=0x01;
+[e = _controle -> -> 1 `i `uc ]
+[; ;teclado_functions.h: 64: RB0=0x01;
 "64
-[e = _RB1 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 65: RB2=0x01;
+[e = _RB0 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 65: RB1=0x01;
 "65
-[e = _RB2 -> -> 1 `i `b ]
-[; ;teclado_functions.h: 66: RB3=0x00;
+[e = _RB1 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 66: RB2=0x01;
 "66
-[e = _RB3 -> -> 0 `i `b ]
-[; ;teclado_functions.h: 67: if(!RB4)pulse(13);
+[e = _RB2 -> -> 1 `i `b ]
+[; ;teclado_functions.h: 67: RB3=0x00;
 "67
+[e = _RB3 -> -> 0 `i `b ]
+[; ;teclado_functions.h: 68: if(!RB4)pulse(13);
+"68
 [e $ ! ! _RB4 134  ]
 [e ( _pulse (1 -> -> 13 `i `uc ]
 [e $U 135  ]
-"68
+"69
 [e :U 134 ]
-[; ;teclado_functions.h: 68: else if(!RB5)pulse(14);
+[; ;teclado_functions.h: 69: else if(!RB5)pulse(14);
 [e $ ! ! _RB5 136  ]
 [e ( _pulse (1 -> -> 14 `i `uc ]
 [e $U 137  ]
-"69
+"70
 [e :U 136 ]
-[; ;teclado_functions.h: 69: else if(!RB6)pulse(15);
+[; ;teclado_functions.h: 70: else if(!RB6)pulse(15);
 [e $ ! ! _RB6 138  ]
 [e ( _pulse (1 -> -> 15 `i `uc ]
 [e $U 139  ]
-"70
+"71
 [e :U 138 ]
-[; ;teclado_functions.h: 70: else if(!RB7)pulse(16);
+[; ;teclado_functions.h: 71: else if(!RB7)pulse(16);
 [e $ ! ! _RB7 140  ]
 [e ( _pulse (1 -> -> 16 `i `uc ]
 [e :U 140 ]
-"71
+"72
 [e :U 139 ]
 [e :U 137 ]
 [e :U 135 ]
 }
 [e :U 133 ]
-"72
+"73
 [e :U 132 ]
 [e :U 123 ]
 [e :U 114 ]
-[; ;teclado_functions.h: 71: }
-[; ;teclado_functions.h: 72: flag=0;
-[e = _flag -> -> 0 `i `b ]
-[; ;teclado_functions.h: 73: }
-"73
+[; ;teclado_functions.h: 72: }
+[; ;teclado_functions.h: 73: flag_teclado=0;
+[e = _flag_teclado -> -> 0 `i `b ]
+[; ;teclado_functions.h: 74: }
+"74
 [e :UE 105 ]
 }
-[v F1225 `(v ~T0 @X0 1 tf ]
+[v F1226 `(v ~T0 @X0 1 tf ]
 "8 teclado.c
-[v _interrupcao `IF1225 ~T0 @X0 1 e ]
+[v _interrupcao `IF1226 ~T0 @X0 1 e ]
 {
 [; ;teclado.c: 8: void interrupt interrupcao(void){
 [e :U _interrupcao ]
@@ -1413,99 +1419,113 @@ Version 3.2 HI-TECH Software Intermediate Code
 "11
 [e $ ! _TMR0IF 142  ]
 {
-[; ;teclado.c: 12: flag=1;
+[; ;teclado.c: 12: TMR0IF = 0x00;
 "12
-[e = _flag -> -> 1 `i `b ]
-[; ;teclado.c: 13: TMR0IF = 0x00;
-"13
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;teclado.c: 14: TMR0 = 0x89;
+[; ;teclado.c: 13: TMR0 = 0x9C;
+"13
+[e = _TMR0 -> -> 156 `i `uc ]
+[; ;teclado.c: 14: counter_teclado++;
 "14
-[e = _TMR0 -> -> 137 `i `uc ]
+[e ++ _counter_teclado -> -> 1 `i `uc ]
+[; ;teclado.c: 15: if(counter_teclado==4){
 "15
+[e $ ! == -> _counter_teclado `i -> 4 `i 143  ]
+{
+[; ;teclado.c: 16: flag_teclado=1;
+"16
+[e = _flag_teclado -> -> 1 `i `b ]
+[; ;teclado.c: 17: counter_teclado=0;
+"17
+[e = _counter_teclado -> -> 0 `i `uc ]
+"18
+}
+[e :U 143 ]
+"19
 }
 [e :U 142 ]
-[; ;teclado.c: 15: }
-[; ;teclado.c: 17: }
-"17
+[; ;teclado.c: 18: }
+[; ;teclado.c: 19: }
+[; ;teclado.c: 21: }
+"21
 [e :UE 141 ]
 }
-"21
+"25
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;teclado.c: 21: void main(){
+[; ;teclado.c: 25: void main(){
 [e :U _main ]
 [f ]
-[; ;teclado.c: 23: OPTION_REG = 0b10000000;
-"23
-[e = _OPTION_REG -> -> 128 `i `uc ]
-[; ;teclado.c: 24: T0CS = 0;
-"24
-[e = _T0CS -> -> 0 `i `b ]
-[; ;teclado.c: 25: T0SE = 0;
-"25
-[e = _T0SE -> -> 0 `i `b ]
-[; ;teclado.c: 26: PSA = 0;
-"26
-[e = _PSA -> -> 0 `i `b ]
-[; ;teclado.c: 27: PS2 = 1;
+[; ;teclado.c: 27: OPTION_REG = 0b10000000;
 "27
-[e = _PS2 -> -> 1 `i `b ]
-[; ;teclado.c: 28: PS1 = 1;
+[e = _OPTION_REG -> -> 128 `i `uc ]
+[; ;teclado.c: 28: T0CS = 0;
 "28
-[e = _PS1 -> -> 1 `i `b ]
-[; ;teclado.c: 29: PS0 = 1;
+[e = _T0CS -> -> 0 `i `b ]
+[; ;teclado.c: 29: T0SE = 0;
 "29
-[e = _PS0 -> -> 1 `i `b ]
-[; ;teclado.c: 32: GIE=1;
+[e = _T0SE -> -> 0 `i `b ]
+[; ;teclado.c: 30: PSA = 0;
+"30
+[e = _PSA -> -> 0 `i `b ]
+[; ;teclado.c: 31: PS2 = 1;
+"31
+[e = _PS2 -> -> 1 `i `b ]
+[; ;teclado.c: 32: PS1 = 1;
 "32
-[e = _GIE -> -> 1 `i `b ]
-[; ;teclado.c: 33: PEIE=1;
+[e = _PS1 -> -> 1 `i `b ]
+[; ;teclado.c: 33: PS0 = 1;
 "33
-[e = _PEIE -> -> 1 `i `b ]
-[; ;teclado.c: 34: TMR0IE=1;
-"34
-[e = _TMR0IE -> -> 1 `i `b ]
-[; ;teclado.c: 35: TMR0 = 0x89;
-"35
-[e = _TMR0 -> -> 137 `i `uc ]
-[; ;teclado.c: 37: TRISC = 0;
+[e = _PS0 -> -> 1 `i `b ]
+[; ;teclado.c: 36: GIE=1;
+"36
+[e = _GIE -> -> 1 `i `b ]
+[; ;teclado.c: 37: PEIE=1;
 "37
-[e = _TRISC -> -> 0 `i `uc ]
-[; ;teclado.c: 38: PORTC = 0;
+[e = _PEIE -> -> 1 `i `b ]
+[; ;teclado.c: 38: TMR0IE=1;
 "38
-[e = _PORTC -> -> 0 `i `uc ]
-[; ;teclado.c: 39: TRISB = 0b11110000;
+[e = _TMR0IE -> -> 1 `i `b ]
+[; ;teclado.c: 39: TMR0 = 0x9C;
 "39
-[e = _TRISB -> -> 240 `i `uc ]
-[; ;teclado.c: 40: PORTB=1;
-"40
-[e = _PORTB -> -> 1 `i `uc ]
-[; ;teclado.c: 41: while(1)
+[e = _TMR0 -> -> 156 `i `uc ]
+[; ;teclado.c: 41: TRISC = 0;
 "41
-[e :U 145 ]
-[; ;teclado.c: 42: {
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;teclado.c: 42: PORTC = 0;
 "42
-{
-[; ;teclado.c: 43: if(flag){
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;teclado.c: 43: TRISB = 0b11110000;
 "43
-[e $ ! _flag 147  ]
-{
-[; ;teclado.c: 44: keyPressed();
+[e = _TRISB -> -> 240 `i `uc ]
+[; ;teclado.c: 44: PORTB=1;
 "44
-[e ( _keyPressed ..  ]
+[e = _PORTB -> -> 1 `i `uc ]
+[; ;teclado.c: 45: while(1)
 "45
-}
-[e :U 147 ]
-"46
-}
-[e :U 144 ]
-"41
-[e $U 145  ]
 [e :U 146 ]
-[; ;teclado.c: 45: }
-[; ;teclado.c: 46: }
-[; ;teclado.c: 48: }
+[; ;teclado.c: 46: {
+"46
+{
+[; ;teclado.c: 47: if(flag_teclado){
+"47
+[e $ ! _flag_teclado 148  ]
+{
+[; ;teclado.c: 48: keyPressed();
 "48
-[e :UE 143 ]
+[e ( _keyPressed ..  ]
+"49
+}
+[e :U 148 ]
+"50
+}
+[e :U 145 ]
+"45
+[e $U 146  ]
+[e :U 147 ]
+[; ;teclado.c: 49: }
+[; ;teclado.c: 50: }
+[; ;teclado.c: 52: }
+"52
+[e :UE 144 ]
 }

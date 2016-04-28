@@ -9,9 +9,13 @@ void interrupt interrupcao(void){
     
     //IF TIMER0
     if(TMR0IF){//Houve estouro do Timer0?        
-        flag=1;
         TMR0IF = 0x00; //Limpa a flag
-        TMR0 = 0x89; //Reinicia o timer0 em 137
+        TMR0 = 0x9C;//inicia o timer0 em 156 em decimal
+        counter_teclado++;//Conta ate 4 para fazer o contador TMR0 do teclado chegar a 24 ms
+        if(counter_teclado==4){
+            flag_teclado=1;//ativa varredura do teclado
+            counter_teclado=0;//reseta contador flag do teclado 
+        }
     }
 
 } //end interrupt
@@ -25,14 +29,14 @@ void main(){
     T0SE = 0;// borda de subida
     PSA = 0;// seleciona o prescaler pra o timer0
     PS2 = 1;// Prescaler 1:256
-    PS1 = 1;// Prequencia de estouro 76Hz
-    PS0 = 1;// Periodo de estouro 13,11 ms 
+    PS1 = 1;// Prequencia de estouro 125Hz
+    PS0 = 1;// Periodo de estouro 7,98 ms 
     
     //Configuração do ITCON overflow do TMR0
     GIE=1;// habilita interrupção global
     PEIE=1;//habilita interrupção por perifericos
     TMR0IE=1;//habilita interrupção por estouro do tmr0
-    TMR0 = 0x89;//inicia o timer0 em 137
+    TMR0 = 0x9C;//inicia o timer0 em 156 em decimal
 
     TRISC = 0;                        //Entrada em RC0 como saida
     PORTC = 0;                        //RC0  iniciam em high e RA2, RA3 como saida
@@ -40,7 +44,7 @@ void main(){
     PORTB=1;
      while(1)//Loop Infinito
      {
-         if(flag){//Se o TMR estourou
+         if(flag_teclado){//Se o TMR estourou
              keyPressed();//faz varredura
          }
      } //end while

@@ -1519,7 +1519,8 @@ extern char * ftoa(float f, int * status);
 
 # 14 "teclado_functions.h"
 unsigned char controle = 0x01;
-bit flag=0;
+bit flag_teclado=0;
+char counter_teclado=0;
 
 
 void pulse(char number){
@@ -1576,7 +1577,7 @@ else if(!RB5)pulse(14);
 else if(!RB6)pulse(15);
 else if(!RB7)pulse(16);
 }
-flag=0;
+flag_teclado=0;
 }
 
 # 8 "teclado.c"
@@ -1584,9 +1585,13 @@ void interrupt interrupcao(void){
 
 
 if(TMR0IF){
-flag=1;
 TMR0IF = 0x00;
-TMR0 = 0x89;
+TMR0 = 0x9C;
+counter_teclado++;
+if(counter_teclado==4){
+flag_teclado=1;
+counter_teclado=0;
+}
 }
 
 }
@@ -1607,7 +1612,7 @@ PS0 = 1;
 GIE=1;
 PEIE=1;
 TMR0IE=1;
-TMR0 = 0x89;
+TMR0 = 0x9C;
 
 TRISC = 0;
 PORTC = 0;
@@ -1615,7 +1620,7 @@ TRISB = 0b11110000;
 PORTB=1;
 while(1)
 {
-if(flag){
+if(flag_teclado){
 keyPressed();
 }
 }
